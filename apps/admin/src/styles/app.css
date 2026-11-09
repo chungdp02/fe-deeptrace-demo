@@ -1,0 +1,368 @@
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Token màu biểu đồ giữ sắc độ nhất quán với thương hiệu DeepTrace. */
+:root {
+  --destructive: #b91c1c;
+  --chart-1: #005aab;
+  --chart-2: #317dbb;
+  --chart-3: #5f9bc9;
+  --chart-4: #8aacc8;
+  --chart-5: #c16d6d;
+}
+
+.admin-page-header h1 {
+  text-wrap: balance;
+}
+.required-field::after {
+  content: " *";
+  color: var(--destructive);
+}
+.metric-strip {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--card);
+}
+.metric-strip > div + div {
+  border-left: 0;
+}
+@media (min-width: 640px) {
+  .metric-strip > div + div {
+    border-left: 1px solid var(--border);
+  }
+}
+
+/* Khai báo màu còn thiếu của popup tại phạm vi Admin, không đổi shared primitives. */
+:root {
+  --popover: #fff;
+  --popover-foreground: var(--foreground);
+  --sidebar: #edf4fa;
+  --sidebar-foreground: #0c263d;
+  --chart-2: #b7791f;
+  --chart-3: #6d58b0;
+  --chart-4: #168365;
+  --chart-5: #c34444;
+}
+[data-slot="dialog-content"],
+[data-slot="alert-dialog-content"] {
+  background-color: var(--popover);
+  color: var(--popover-foreground);
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+}
+[data-slot="dialog-overlay"],
+[data-slot="alert-dialog-overlay"] {
+  background-color: rgb(12 38 61 / 40%);
+}
+[data-slot="select-trigger"],
+[data-slot="input"] {
+  min-height: 2.25rem;
+}
+
+[data-slot="select-content"],
+[data-slot="dropdown-menu-content"],
+[data-slot="popover-content"] {
+  background-color: var(--popover);
+  color: var(--popover-foreground);
+}
+
+/* Đồng bộ viền của các phần tử app với token thương hiệu. */
+* {
+  border-color: var(--border);
+}
+
+/* Cùng một bề mặt cho thanh điều hướng, logo và header. */
+.admin-shell {
+  --admin-shell-background: #0c263d;
+  --sidebar: var(--admin-shell-background);
+  background: var(--background);
+}
+.admin-topbar,
+.admin-sidebar-header,
+.admin-sidebar-footer,
+.admin-sidebar [data-slot="sidebar-inner"],
+[data-slot="sidebar"][data-mobile="true"] {
+  background: var(--admin-shell-background, #fff);
+}
+.admin-sidebar-content {
+  overflow-y: auto !important;
+  overflow-x: hidden;
+}
+.admin-nav-group [data-slot="sidebar-menu"] {
+  gap: 4px;
+}
+.admin-nav-group [data-slot="sidebar-menu-button"] {
+  min-height: 40px;
+  padding-inline: 12px;
+  border-radius: 8px;
+}
+.admin-nav-group [data-slot="sidebar-menu-button"] > svg {
+  width: 18px;
+  height: 18px;
+}
+.admin-nav-group [data-slot="sidebar-menu-button"]:hover,
+.admin-sidebar-toggle:hover {
+  background: var(--secondary);
+}
+.admin-nav-group
+  [data-slot="sidebar-menu-button"][data-active]:not([data-active="false"]) {
+  background: var(--secondary);
+  color: var(--primary);
+}
+[data-slot="sidebar"][data-collapsible="icon"] .admin-sidebar-content {
+  padding: 12px 8px;
+}
+[data-slot="sidebar"][data-collapsible="icon"] .admin-nav-group {
+  padding: 8px 0;
+}
+[data-slot="sidebar"][data-collapsible="icon"]
+  .admin-nav-group
+  + .admin-nav-group {
+  border-top: 1px solid var(--border);
+}
+[data-slot="sidebar"][data-collapsible="icon"]
+  [data-slot="sidebar-group-label"] {
+  display: none;
+}
+[data-slot="sidebar"][data-collapsible="icon"] [data-slot="sidebar-menu"] {
+  align-items: center;
+}
+[data-slot="sidebar"][data-collapsible="icon"]
+  #admin-navigation
+  [data-slot="sidebar-menu-button"] {
+  width: 40px !important;
+  height: 40px !important;
+  padding: 0 !important;
+  justify-content: center;
+}
+[data-slot="sidebar"][data-collapsible="icon"]
+  [data-slot="sidebar-menu-button"]
+  > span {
+  display: none;
+}
+[data-slot="sidebar"][data-collapsible="icon"] .admin-sidebar-footer {
+  align-items: center;
+  padding: 12px 8px;
+}
+[data-slot="sidebar"][data-collapsible="icon"] .admin-sidebar-toggle {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  justify-content: center;
+}
+[data-slot="sidebar"][data-collapsible="icon"] .admin-sidebar-toggle > span {
+  display: none;
+}
+
+/* Cùng layer với utility của primitive để kích thước rail được áp dụng nhất quán. */
+@layer utilities {
+  [data-slot="sidebar"][data-collapsible="icon"]
+    #admin-navigation
+    [data-slot="sidebar-menu-button"] {
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+  }
+}
+
+/* Palette du shell tách khỏi bề mặt nội dung trắng. */
+:root {
+  --admin-shell-background: #0c263d;
+  --admin-shell-foreground: #e7f1ff;
+}
+.admin-topbar,
+.admin-sidebar-header,
+.admin-sidebar-footer,
+.admin-sidebar [data-slot="sidebar-inner"],
+[data-slot="sidebar"][data-mobile="true"] {
+  color: var(--admin-shell-foreground);
+  border-color: rgb(255 255 255 / 12%);
+}
+.admin-topbar > p,
+.admin-sidebar-toggle,
+.admin-nav-group [data-slot="sidebar-menu-button"] {
+  color: inherit;
+}
+.admin-nav-group [data-slot="sidebar-menu-button"]:hover,
+.admin-sidebar-toggle:hover {
+  background: rgb(255 255 255 / 10%);
+}
+.admin-nav-group
+  [data-slot="sidebar-menu-button"][data-active]:not([data-active="false"]) {
+  background: rgb(173 216 255 / 16%);
+  color: #add8ff;
+}
+[data-slot="sidebar"][data-collapsible="icon"]
+  .admin-nav-group
+  + .admin-nav-group {
+  border-color: rgb(255 255 255 / 12%);
+}
+/* KPI theo số lượng thực tế: không để hàng desktop có một thẻ lẻ. */
+.admin-metrics > div {
+  display: flex;
+  flex-direction: column;
+}
+.admin-metrics dd {
+  overflow-wrap: anywhere;
+}
+@media (min-width: 390px) and (max-width: 1279px) {
+  .admin-metrics > div:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+@media (min-width: 1280px) {
+  .admin-metrics[data-columns="2"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .admin-metrics[data-columns="3"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .admin-metrics[data-columns="4"] {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+/* Portal giữ popup ngoài vùng cuộn của table; popup tự cuộn trong chiều cao khả dụng. */
+[data-slot="dropdown-menu-content"],
+[data-slot="select-content"],
+[data-slot="popover-content"] {
+  max-width: calc(100dvw - 1rem);
+  max-height: min(var(--available-height, 80dvh), calc(100dvh - 1rem));
+  overscroll-behavior: contain;
+}
+[data-slot="dropdown-menu-item"],
+[data-slot="select-item"] {
+  min-height: 36px;
+}
+[data-slot="select-item"] [data-slot="select-item-text"] {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+[data-slot="dialog-content"],
+[data-slot="alert-dialog-content"] {
+  max-width: min(32rem, calc(100dvw - 2rem));
+  overscroll-behavior: contain;
+}
+.admin-page-header {
+  gap: 1rem;
+}
+[data-slot="card"] {
+  min-width: 0;
+}
+
+.admin-sidebar-toggle[aria-expanded="true"] {
+  background: rgb(255 255 255 / 8%);
+  color: inherit;
+}
+
+/* Bề mặt gọn: bo góc nhẹ, giữ avatar hình tròn để phân biệt người dùng. */
+.admin-shell {
+  --radius: 0.375rem;
+}
+[data-slot="card"],
+.admin-metrics > div,
+[data-slot="page-content"] article,
+[data-slot="dialog-content"],
+[data-slot="alert-dialog-content"],
+[data-slot="dropdown-menu-content"],
+[data-slot="select-content"],
+[data-slot="popover-content"] {
+  border-radius: 6px;
+}
+[data-slot="button"],
+[data-slot="input"],
+[data-slot="select-trigger"],
+.admin-nav-group [data-slot="sidebar-menu-button"] {
+  border-radius: 4px;
+}
+[data-slot="badge"] {
+  border-radius: 4px;
+}
+.admin-sidebar-header .admin-sidebar-toggle {
+  color: inherit;
+  background: transparent;
+}
+.admin-sidebar-header .admin-sidebar-toggle:hover {
+  background: rgb(255 255 255 / 10%);
+}
+
+/* Mã lô/chứng từ dài vẫn nằm trong card và dialog trên mobile. */
+[data-slot="page-content"] a, [data-slot="dialog-content"], fieldset label { overflow-wrap: anywhere; }
+
+/* Bộ lọc tự chia cột theo chiều rộng thực, căn đáy nhãn và thống nhất chiều cao. */
+.admin-filter-toolbar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+  align-items: end;
+  gap: 0.75rem;
+}
+.admin-filter-toolbar > * { min-width: 0; }
+.admin-filter-toolbar [data-slot="input"],
+.admin-filter-toolbar [data-slot="select-trigger"],
+.admin-filter-toolbar [data-slot="button"] { height: 2.25rem; min-height: 2.25rem; }
+.status-badge { font-weight: 500; white-space: nowrap; }
+
+.admin-event-filters { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 640px) {
+  .admin-event-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .admin-event-filters > :first-child { grid-column: 1 / -1; }
+}
+@media (min-width: 1280px) {
+  .admin-event-filters { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .admin-event-filters > :first-child { grid-column: auto; }
+}
+
+/* Dialog của Admin: vùng cuộn nằm trong viewport, trường và nút có nhịp khoảng cách chung. */
+[data-slot="dialog-content"], [data-slot="alert-dialog-content"] {
+  padding: 1.25rem;
+  gap: 1rem;
+  max-height: calc(100dvh - 2rem);
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+[data-slot="dialog-content"] form { display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
+[data-slot="dialog-content"] form > * { margin-block: 0; min-width: 0; }
+[data-slot="dialog-content"] form > .space-y-2 { display: grid; gap: .375rem; }
+[data-slot="dialog-content"] form > .space-y-2 > * { margin-block: 0; }
+[data-slot="dialog-content"] [data-slot="input"],
+[data-slot="dialog-content"] [data-slot="select-trigger"],
+[data-slot="dialog-content"] [data-slot="button"],
+[data-slot="alert-dialog-content"] [data-slot="button"] { min-height: 2.5rem; height: auto; }
+[data-slot="dialog-content"] [data-slot="input"],
+[data-slot="dialog-content"] [data-slot="select-trigger"] { height: 2.5rem; min-width: 0; }
+[data-slot="dialog-content"] textarea { min-width: 0; resize: vertical; }
+[data-slot="dialog-content"] [data-slot="dialog-title"],
+[data-slot="alert-dialog-content"] [data-slot="alert-dialog-title"] { padding-right: 1.5rem; }
+[data-slot="dialog-footer"], [data-slot="alert-dialog-footer"] {
+  display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-end;
+  gap: .5rem; margin-top: .25rem; padding-top: 1rem; border-top: 1px solid var(--border);
+}
+.admin-form-fields { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; gap: 1rem; }
+[data-slot="dialog-content"] dl > *, [data-slot="dialog-content"] p { min-width: 0; overflow-wrap: anywhere; }
+@media (min-width: 640px) {
+  [data-slot="dialog-content"].admin-form-dialog { max-width: min(42rem, calc(100dvw - 2rem)); }
+  .admin-form-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 639px) {
+  [data-slot="dialog-content"], [data-slot="alert-dialog-content"] { padding: 1rem; }
+  [data-slot="dialog-footer"] > [data-slot="button"], [data-slot="alert-dialog-footer"] > [data-slot="button"] { flex: 1 1 7rem; min-height: 2.75rem; }
+  [data-slot="dialog-content"] [data-slot="input"], [data-slot="dialog-content"] [data-slot="select-trigger"] { height: 2.75rem; }
+  [data-slot="dialog-content"] dl { grid-template-columns: minmax(0, 1fr); gap: .25rem; }
+  [data-slot="dialog-content"] dd { margin-bottom: .5rem; }
+}
+
+/* Calendar riêng đã có nút mở; tránh hai biểu tượng lịch trên cùng một trường. */
+.admin-date-field input::-webkit-calendar-picker-indicator { display: none; }
+
+[data-slot="dialog-footer"] > button, [data-slot="alert-dialog-footer"] > button { min-height: 2.5rem; white-space: normal; }
+@media (max-width: 639px) {
+  [data-slot="dialog-footer"] > button, [data-slot="alert-dialog-footer"] > button { flex: 1 1 7rem; min-height: 2.75rem; }
+}
+
+[data-slot="alert-dialog-content"] { overflow-wrap: anywhere; }

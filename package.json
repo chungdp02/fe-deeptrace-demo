@@ -1,0 +1,24 @@
+{
+  "name": "deeppro-fe-platform",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:admin": "pnpm --filter @deeptrace/admin dev",
+    "dev:landing": "pnpm --filter @deeptrace/landing-page dev",
+    "dev:landing-page": "pnpm --filter @deeptrace/landing-page dev",
+    "build:admin": "pnpm --filter @deeptrace/admin build",
+    "build:landing-page": "pnpm --filter @deeptrace/landing-page build",
+    "typecheck:admin": "pnpm --filter @deeptrace/admin typecheck",
+    "typecheck:landing-page": "pnpm --filter @deeptrace/landing-page typecheck",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck"
+  },
+  "devDependencies": {
+    "turbo": "^2.11.7"
+  }
+}
