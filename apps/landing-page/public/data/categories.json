@@ -1,0 +1,52 @@
+{
+  "categories": [
+    {
+      "id": "healthcare",
+      "title": { "vi": "Y tế & Dược phẩm", "en": "Healthcare & Pharmaceuticals" },
+      "description": {
+        "vi": "Ghi nhận thông tin lô, hạn dùng và các điểm bàn giao để hỗ trợ tra cứu hành trình sản phẩm.",
+        "en": "Record batch, expiry and handoff information to help trace a product's journey."
+      },
+      "highlights": {
+        "vi": ["Lô sản xuất và hạn sử dụng", "Các mốc bàn giao trong phân phối", "Thông tin sản phẩm cho người tra cứu"],
+        "en": ["Production batch and expiry", "Distribution handoff points", "Product information for lookup"]
+      },
+      "sample": {
+        "product": { "vi": "Hộp dược phẩm mẫu", "en": "Sample medicine package" },
+        "batchCode": "DEMO-YT-001"
+      }
+    },
+    {
+      "id": "food-agriculture",
+      "title": { "vi": "Thực phẩm & Nông nghiệp", "en": "Food & Agriculture" },
+      "description": {
+        "vi": "Liên kết thông tin vùng trồng, thu hoạch, đóng gói và vận chuyển trong một hành trình có thể tra cứu.",
+        "en": "Connect farm, harvest, packing and transport information in a traceable journey."
+      },
+      "highlights": {
+        "vi": ["Nguồn gốc và vùng trồng", "Thu hoạch, đóng gói và vận chuyển", "Các thông tin theo lô sản phẩm"],
+        "en": ["Origin and growing area", "Harvest, packing and transport", "Information by product batch"]
+      },
+      "sample": {
+        "product": { "vi": "Lô rau củ tươi mẫu", "en": "Sample fresh produce lot" },
+        "batchCode": "DEMO-TP-001"
+      }
+    },
+    {
+      "id": "consumer-goods",
+      "title": { "vi": "Hàng tiêu dùng", "en": "Consumer Goods" },
+      "description": {
+        "vi": "Tổ chức dữ liệu về nguồn gốc, lô hàng và kênh phân phối để người dùng tiếp cận thông tin rõ ràng hơn.",
+        "en": "Organize origin, batch and distribution data so consumers can access clearer product information."
+      },
+      "highlights": {
+        "vi": ["Nguồn gốc sản phẩm", "Lô hàng và đơn vị phân phối", "Thông tin có thể tra cứu"],
+        "en": ["Product origin", "Batch and distributor", "Information available for lookup"]
+      },
+      "sample": {
+        "product": { "vi": "Sản phẩm chăm sóc cá nhân mẫu", "en": "Sample personal care product" },
+        "batchCode": "DEMO-TD-001"
+      }
+    }
+  ]
+}

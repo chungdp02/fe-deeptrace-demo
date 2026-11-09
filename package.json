@@ -1,0 +1,10 @@
+{
+  "name": "fe-deeptrace-demo",
+  "private": true,
+  "scripts": {
+    "dev:landing": "pnpm --filter @workspace/landing-page dev",
+    "build:landing": "pnpm --filter @workspace/landing-page build",
+    "test:landing": "pnpm --filter @workspace/landing-page test",
+    "test:e2e:landing": "pnpm --filter @workspace/landing-page test:e2e"
+  }
+}
